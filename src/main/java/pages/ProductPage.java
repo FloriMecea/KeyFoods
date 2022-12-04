@@ -134,8 +134,8 @@ public class ProductPage extends SeleniumWrappers{
 		   
 		   List <WebElement> list1=new ArrayList <WebElement>();
 		   List <WebElement> list2=new ArrayList <WebElement>();
-		  // double[] price_array = new double[list.size()];
-		   double[] price_array = new double[2];
+		  // double[] price_array = new double[list1.size()]; // trebuia mutata dp ce populam listele (list1 e populata pe linia140 si list2 pe 143
+		//   double[] price_array = new double[2];
 		   
 		   list1=driver.findElements(locator_price);
 		   System.out.println("Lista price are dimensiunea: " +list1.size());
@@ -143,7 +143,8 @@ public class ProductPage extends SeleniumWrappers{
 		   list2=driver.findElements(locator_quantity);
 		   System.out.println("Lista quantity are dimensiunea: " +list2.size());
 		   
-		
+		   double[] price_array = new double[list1.size()];
+		   
 		   for (int i=0; i<list1.size();i++) {
 			   System.out.println(i);
 			   price_array[i]=calculateFinalPrice_receivingWebElement(list1.get(i),list2.get(i));
